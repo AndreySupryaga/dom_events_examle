@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Сохранение и извлечение данных localStorage</title>
+    <title>Збереження та вилучення даних localStorage</title>
     <script>
 
         window.addEventListener('load', init, false);
@@ -13,9 +13,9 @@
 
             btn1.onclick = function () {
                 localStorage.setItem('key1', 'Test value');
-                // или
+                // або
                 localStorage.key2 = 'Test value 2';
-                // или
+                // або
                 localStorage['key3'] = 'Test value 3';
             }
 
@@ -27,19 +27,18 @@
                 output.innerHTML += localStorage['key3'];
             }
         }
-
     </script>
 </head>
 <body>
 <p>
-    Значения в localStorage существуют не зависимо от закрытия вкладки или браузера
+    Значення в localStorage існують незалежно від закриття вкладки або браузераа
 </p>
 <p>
-    Значения совместно используются всеми окнами и вкладками, выполняющимися на одном
-    и том же источнике.
+    Значення спільно використовуються всіма вікнами та вкладками, що виконуються на одному
+    і тому ж джерелі.
 </p>
-<input id="btn1" type="button" value="Запись в localStorage"/>
-<input id="btn2" type="button" value="Чтение из localStorage"/>
+<input id="btn1" type="button" value="Запис у localStorage"/>
+<input id="btn2" type="button" value="Читання з localStorage"/>
 <div id="output">
 </div>
 </body>
