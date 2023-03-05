@@ -5,18 +5,18 @@
     <script type="text/javascript">
         window.onload = function () {
 
-            const btn1 = document.getElementById("button1");
-            const btn2 = document.getElementById("button2");
+            const btn1 = document.getElementById('button1');
+            const btn2 = document.getElementById('button2');
 
-            btn1.addEventListener("click", handler, false);
-            btn2.addEventListener("click", removeHandler, false);
+            btn1.addEventListener('click', handler, false);
+            btn2.addEventListener('click', removeHandler, false);
 
             function handler() {
-                alert("Обработчик события нажатия кнопки");
+                alert('Обработчик события нажатия кнопки');
             }
 
             function removeHandler() {
-                btn1.removeEventListener("click", handler, false);
+                btn1.removeEventListener('click', handler, false);
             }
         }
     </script>

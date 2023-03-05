@@ -19,19 +19,19 @@
         }
     </style>
     <script type="text/javascript">
-        window.addEventListener("load", init, false);
+        window.addEventListener('load', init, false);
 
         function init() {
 
-            const inputs = document.getElementsByTagName("input");
+            const inputs = document.getElementsByTagName('input');
 
             for (let i = 0; i < inputs.length; i++) {
-                inputs[i].addEventListener("keypress", keyFilter, false);
+                inputs[i].addEventListener('keypress', keyFilter, false);
             }
 
             function keyFilter(e) {
                 // dataset - свойство, дающее возможность обратиться к атрибутам data-*
-                // другой способ получения атрибута - this.getAttribute("data-chars-allowed")
+                // другой способ получения атрибута - this.getAttribute('data-chars-allowed')
 
                 const allowedText = e.target.dataset.charsAllowed;
                 const symbol = String.fromCharCode(e.charCode).toLowerCase();
@@ -39,9 +39,9 @@
                 const element = document.getElementById(elementId);
 
                 if (allowedText.includes(symbol) && element) {
-                    element.style.visibility = "hidden";
+                    element.style.visibility = 'hidden';
                 } else {
-                    element.style.visibility = "visible";
+                    element.style.visibility = 'visible';
                     e.preventDefault();
                 }
             }
