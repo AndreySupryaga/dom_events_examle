@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Фильтрация ввода с клавиатуры</title>
+    <title>Фільтрування введення з клавіатури</title>
     <style>
         body {
             font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
@@ -12,7 +12,6 @@
             float: left;
         }
 
-        /*стиль для span, которые расположены в разметке сразу за input*/
         .error-message {
             visibility: hidden;
             color: red;
@@ -30,12 +29,12 @@
             }
 
             function keyFilter(e) {
-                // dataset - свойство, дающее возможность обратиться к атрибутам data-*
-                // другой способ получения атрибута - this.getAttribute('data-chars-allowed')
+                // dataset - властивість, що дозволяє звернутися до атрибутів data-*
+                // інший спосіб отримання атрибуту - this.getAttribute('data-chars-allowed')
 
                 const allowedText = e.target.dataset.charsAllowed;
                 const symbol = String.fromCharCode(e.charCode).toLowerCase();
-                const elementId = e.target.dataset.messageId; // элемент, который необходимо отобразить в случае ошибки
+                const elementId = e.target.dataset.messageId; // елемент, який необхідно відобразити у разі помилки
                 const element = document.getElementById(elementId);
 
                 if (allowedText.includes(symbol) && element) {
@@ -50,15 +49,15 @@
 </head>
 <body>
 <p>
-    <label>Имя</label>
-    <input type="text" name="firstName" data-chars-allowed="абвгдеёжзиыйклмнопрстуфхцчэюя"
+    <label>Ім'я</label>
+    <input type="text" name="firstName" data-chars-allowed="абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
            data-message-id="firstNameError"/>
-    <span id="firstNameError" class="error-message">допускаются только буквы русского алфавита</span>
+    <span id="firstNameError" class="error-message">допускаються лише літери українського алфавіту</span>
 </p>
 <p>
-    <label>Почтовый индекс</label>
+    <label>Почтовий індекс</label>
     <input type="text" name="zip" data-chars-allowed="1234567890" data-message-id="zipError"/>
-    <span id="zipError" class="error-message">допускаются только цифры</span>
+    <span id="zipError" class="error-message">допускаються лише цифри</span>
 </p>
 </body>
 </html>
